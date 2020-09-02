@@ -33,7 +33,7 @@ Project manager built with vue and vuetify.
 - [X] Project Name (text field)
 - [X] Project Flow (chips)
 - [X] Edit Button
-  - [ ] editable text fields
+  - [X] editable text fields
   - [ ] editable (preferabaly draggable) flow
 - [X] Delete Button
   - [X] deletes entire project 
@@ -47,7 +47,7 @@ Project manager built with vue and vuetify.
   
 
 ## Deploy to Netlify 🚀
-Step 1: build: `npm run build`
+Tutorial can be found [here](https://cli.vuejs.org/guide/deployment.html#github-pages)
 
 ## Next Steps 🐾
 ### Connect to flask API
