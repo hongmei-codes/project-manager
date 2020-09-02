@@ -14,22 +14,12 @@
           </v-flex>
           <v-flex class="pa-3" xs6 sm4 md2>
             <div class="caption grey--text">Project Task Flow</div>
-            <v-flex v-for="task in project.flow" :key="task">
+            <v-flex v-for="(task, i) in project.flow" :key="task">
               <v-chip small class="my-1" color="amber">{{ task }}</v-chip>
+              <span v-if="i < project.flow.length - 1"><v-icon color="amber darken-1">mdi-arrow-right</v-icon></span>
             </v-flex>
           </v-flex>
-          <v-btn
-            color="green"
-            dark
-            x-small
-            absolute
-            right
-            top
-            fab
-            @click="edit"
-          >
-            <v-icon>mdi-pencil</v-icon>
-          </v-btn>
+          <EditProject :project="project"/>
           <v-btn
             color="red"
             dark
@@ -49,8 +39,14 @@
 </template>
 
 <script>
+import EditProject from "./EditProject";
+
 export default {
   name: "Projects",
+
+  components: {
+    EditProject,
+  },
 
   props: {
     projects: {
@@ -64,9 +60,6 @@ export default {
   }),
 
   methods: {
-    edit() {
-      alert("clicked edit button");
-    },
     remove(project) {
       const index = this.projects.indexOf(project);
       this.projects.splice(index, 1);
