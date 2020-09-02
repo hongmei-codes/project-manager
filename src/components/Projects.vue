@@ -4,8 +4,8 @@
       <v-card
         class="my-10"
         color="amber lighten-4"
-        v-for="(project, i) in projects"
-        :key="i"
+        v-for="project in projects"
+        :key="project.id"
       >
         <v-layout>
           <v-flex class="pa-3" xs12 md6>
@@ -18,10 +18,28 @@
               <v-chip small class="my-1" color="amber">{{ task }}</v-chip>
             </v-flex>
           </v-flex>
-          <v-btn color="green" dark x-small absolute right top fab @click="edit">
+          <v-btn
+            color="green"
+            dark
+            x-small
+            absolute
+            right
+            top
+            fab
+            @click="edit"
+          >
             <v-icon>mdi-pencil</v-icon>
           </v-btn>
-          <v-btn color="red" dark x-small absolute right bottom fab @click="remove">
+          <v-btn
+            color="red"
+            dark
+            x-small
+            absolute
+            right
+            bottom
+            fab
+            @click="remove(project)"
+          >
             <v-icon>mdi-delete</v-icon>
           </v-btn>
         </v-layout>
@@ -47,10 +65,11 @@ export default {
 
   methods: {
     edit() {
-      alert("edit clicked");
+      alert("clicked edit button");
     },
-    remove() {
-      alert("remove clicked");
+    remove(project) {
+      const index = this.projects.indexOf(project);
+      this.projects.splice(index, 1);
     },
   },
 };
