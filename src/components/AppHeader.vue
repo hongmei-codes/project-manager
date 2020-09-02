@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <v-app-bar app clipped-left color="amber">
       <v-app-bar-nav-icon @click="slideIn = !slideIn"></v-app-bar-nav-icon>
       <span class="title ml-3 mr-5"
@@ -27,7 +27,7 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-  </v-container>
+  </div>
 </template>
 
 <script>

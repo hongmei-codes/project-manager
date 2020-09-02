@@ -1,7 +1,7 @@
 <template>
-  <v-container>
+  <div>
     <h2>Hello from {{ filename }}</h2>
-  </v-container>
+  </div>
 </template>
 
 <script>
