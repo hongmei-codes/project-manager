@@ -1,6 +1,8 @@
 <template>
   <v-container>
-    <h2>Hello from {{ filename }}</h2>
+    <v-main>
+        <h1>List of Projects</h1>
+    </v-main>
     <Project />
   </v-container>
 </template>

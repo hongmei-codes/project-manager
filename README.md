@@ -10,10 +10,10 @@
 
 ## Components 🧩
 ### App Header
-- [ ] burger menu
-- [ ] side menu (no features)
-- [ ] title
-- [ ] code link
+- [X] burger menu
+- [X] side menu (no features)
+- [X] title
+- [X] code link
 
 
 ### Projects List
