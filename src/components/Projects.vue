@@ -14,7 +14,7 @@
           </v-flex>
           <v-flex class="pa-3" xs6 sm4 md2>
             <div class="caption grey--text">Project Task Flow</div>
-            <v-flex v-for="(task, i) in project.flow" :key="i">
+            <v-flex v-for="task in project.flow" :key="task">
               <v-chip small class="my-1" color="amber">{{ task }}</v-chip>
             </v-flex>
           </v-flex>

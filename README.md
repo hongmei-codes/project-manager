@@ -17,22 +17,23 @@
 
 
 ### Projects List
-- [ ] list all projects
+- [X] list all projects
 
 ### Individual Project
-- [ ] Project Name (text field)
-- [ ] Project Flow (chips)
-- [ ] Edit Button
+- [X] Project Name (text field)
+- [X] Project Flow (chips)
+- [X] Edit Button
   - [ ] editable text fields
   - [ ] editable (preferabaly draggable) flow
-- [ ] Delete Button
-  - [ ] deletes entire project 
+- [X] Delete Button
+  - [X] deletes entire project 
  
 ### Add Project Pop-up
-- [ ] pop up form
-  - [ ] project name (text)
-  - [ ] project flow (chips, autocomplete)
-- [ ] save button
+- [X] pop up form
+  - [X] project name (text)
+  - [X] project flow (chips, autocomplete)
+- [X] save button
+- [X] close button
   
 
 ## Deploy to netifly
