@@ -77,7 +77,7 @@ export default {
           name: this.projectName,
           flow: this.taskFlow,
         };
-        this.$store.commit("add", project);
+        this.$store.dispatch("add", project);
 
         this.$refs.form.reset(); // resets the form
         this.popup = false; // closes the dialog

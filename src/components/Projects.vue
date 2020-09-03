@@ -62,7 +62,7 @@ export default {
 
   methods: {
     remove(project) {
-      return this.$store.commit("remove", project);
+      this.$store.dispatch("remove", project);
     },
   },
 };

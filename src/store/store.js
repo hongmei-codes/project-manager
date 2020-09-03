@@ -58,10 +58,22 @@ export const store = new Vuex.Store({
       );
     },
   },
-});
 
-// const newProjects = projects.map(p =>
-//   p.value === 'jquery-ui'
-//     ? { ...p, desc: 'new description' }
-//     : p
-// );
+  actions: {
+    add: (context, project) => {
+      setTimeout(() => {
+        context.commit("add", project);
+      }, 2000);
+    },
+    remove: (context, project) => {
+      setTimeout(() => {
+        context.commit("remove", project);
+      }, 2000);
+    },
+    edit: (context, { id, name, flow }) => {
+      setTimeout(() => {
+        context.commit("edit", { id, name, flow });
+      }, 2000);
+    },
+  },
+});

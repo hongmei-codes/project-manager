@@ -91,7 +91,7 @@ export default {
         // edit project
         const name = this.projectName;
         const flow = this.taskFlow;
-        this.$store.commit("edit", { id, name, flow });
+        this.$store.dispatch("edit", { id, name, flow });
 
         this.open = false; // closes the dialog
       } else {
