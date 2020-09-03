@@ -34,7 +34,8 @@ Project manager built with vue and vuetify.
 - [X] Project Flow (chips)
 - [X] Edit Button
   - [X] editable text fields
-  - [ ] editable (preferabaly draggable) flow
+  - [X] editable flow
+  - [ ] draggable flow
 - [X] Delete Button
   - [X] deletes entire project 
  
@@ -50,6 +51,11 @@ Project manager built with vue and vuetify.
 Tutorial can be found [here](https://cli.vuejs.org/guide/deployment.html#github-pages)
 
 ## Next Steps 🐾
+### Enhancements
+- [X] use vuex
+- [ ] simulate api fetching
+
+
 ### Connect to flask API
 flask api...
 
@@ -59,6 +65,7 @@ unit testing...
 ---
 ## References 🔎
 * [vue](vuejs.org)
+* [vuex](https://vuex.vuejs.org/)
 * [vuetify chips](https://vuetifyjs.com/en/components/chips/)
 * [vue drag and drop](https://sortablejs.github.io/Vue.Draggable/)
 * [vuetify chip group drag and drop](https://codepen.io/chansv/pen/zYvOYyd?editors=1010)

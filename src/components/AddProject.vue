@@ -22,16 +22,16 @@
             ></v-text-field>
 
             <v-autocomplete
-            v-model="taskFlow"
-            :items="tasks"
-            color="amber darken-3"
-            outlined
-            chips
-            small-chips
-            deletable-chips
-            label="Tasks"
-            multiple
-          ></v-autocomplete>
+              v-model="taskFlow"
+              :items="tasks"
+              color="amber darken-3"
+              outlined
+              chips
+              small-chips
+              deletable-chips
+              label="Tasks"
+              multiple
+            ></v-autocomplete>
 
             <v-spacer></v-spacer>
             <v-btn color="amber darken-3" text @click="close">Close</v-btn>
@@ -47,14 +47,12 @@
 export default {
   name: "AddProject",
 
-  props: {
-    projects: {
-      type: Array,
-      required: true,
+  computed: {
+    projects() {
+      return this.$store.state.projects;
     },
-    tasks: {
-      type: Array,
-      required: true,
+    tasks() {
+      return this.$store.state.tasks;
     },
   },
 
@@ -62,30 +60,30 @@ export default {
     popup: false,
     valid: true,
     projectName: "",
-    nameRules: [ v => !!v || 'Name is required' ],
+    nameRules: [(v) => !!v || "Name is required"],
     taskFlow: [],
   }),
 
   methods: {
     close() {
       this.popup = false;
-      this.$refs.form.reset();  // resets the form
+      this.$refs.form.reset(); // resets the form
     },
     add() {
-      if (this.$refs.form.validate()){
-          // submit form
-          const project = {
-              id: Date.now(),
-              name: this.projectName,
-              flow: this.taskFlow
-          }
-          this.projects.unshift(project);
-          this.$refs.form.reset();  // resets the form
-          this.popup = false;  // closes the dialog
-      } else {
-          this.popup = true;
-      }
+      if (this.$refs.form.validate()) {
+        // submit form
+        const project = {
+          id: Date.now(),
+          name: this.projectName,
+          flow: this.taskFlow,
+        };
+        this.$store.commit("add", project);
 
+        this.$refs.form.reset(); // resets the form
+        this.popup = false; // closes the dialog
+      } else {
+        this.popup = true;
+      }
     },
   },
 };
