@@ -33,7 +33,7 @@
 
             <v-autocomplete
               v-model="taskFlow"
-              :items="items"
+              :items="tasks"
               color="amber darken-3"
               outlined
               chips
@@ -45,7 +45,9 @@
 
             <v-spacer></v-spacer>
             <v-btn color="amber darken-3" text @click="close">Close</v-btn>
-            <v-btn color="amber darken-3" text @click="edit">Save</v-btn>
+            <v-btn color="amber darken-3" text @click="edit(project.id)"
+              >Save</v-btn
+            >
           </v-form>
         </v-card-text>
       </v-card>
@@ -64,6 +66,12 @@ export default {
     },
   },
 
+  computed: {
+    tasks() {
+      return this.$store.state.tasks;
+    },
+  },
+
   data() {
     return {
       open: false,
@@ -71,7 +79,6 @@ export default {
       projectName: this.project.name,
       nameRules: [(v) => !!v || "Name is required"],
       taskFlow: this.project.flow,
-      items: ["Plan", "Design", "Create", "Test"],
     };
   },
 
@@ -79,11 +86,13 @@ export default {
     close() {
       this.open = false;
     },
-    edit() {
+    edit(id) {
       if (this.$refs.form.validate()) {
-        // update project
-        this.project.name = this.projectName;
-        this.project.flow = this.taskFlow;
+        // edit project
+        const name = this.projectName;
+        const flow = this.taskFlow;
+        this.$store.commit("edit", { id, name, flow });
+
         this.open = false; // closes the dialog
       } else {
         this.open = true;

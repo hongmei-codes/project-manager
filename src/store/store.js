@@ -3,8 +3,9 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-export const store = new Vue.Store({
+export const store = new Vuex.Store({
   state: {
+    tasks: ["Plan", "Design", "Create", "Test"],
     projects: [
       {
         id: "1",
@@ -43,4 +44,24 @@ export const store = new Vue.Store({
       },
     ],
   },
+
+  mutations: {
+    add: (state, project) => {
+      state.projects.unshift(project);
+    },
+    remove: (state, project) => {
+      state.projects.splice(state.projects.indexOf(project), 1);
+    },
+    edit: (state, { id, name, flow }) => {
+      state.projects = state.projects.map((p) =>
+        p.id === id ? { ...p, name, flow } : p
+      );
+    },
+  },
 });
+
+// const newProjects = projects.map(p =>
+//   p.value === 'jquery-ui'
+//     ? { ...p, desc: 'new description' }
+//     : p
+// );

@@ -16,10 +16,12 @@
             <div class="caption grey--text">Project Task Flow</div>
             <v-flex v-for="(task, i) in project.flow" :key="task">
               <v-chip small class="my-1" color="amber">{{ task }}</v-chip>
-              <span v-if="i < project.flow.length - 1"><v-icon color="amber darken-1">mdi-arrow-right</v-icon></span>
+              <span v-if="i < project.flow.length - 1"
+                ><v-icon color="amber darken-1">mdi-arrow-right</v-icon></span
+              >
             </v-flex>
           </v-flex>
-          <EditProject :project="project"/>
+          <EditProject :project="project" />
           <v-btn
             color="red"
             dark
@@ -48,10 +50,9 @@ export default {
     EditProject,
   },
 
-  props: {
-    projects: {
-      type: Array,
-      required: true,
+  computed: {
+    projects() {
+      return this.$store.state.projects;
     },
   },
 
@@ -61,8 +62,7 @@ export default {
 
   methods: {
     remove(project) {
-      const index = this.projects.indexOf(project);
-      this.projects.splice(index, 1);
+      return this.$store.commit("remove", project);
     },
   },
 };
