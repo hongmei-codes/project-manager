@@ -46,7 +46,7 @@ Project manager built with vue and vuetify.
 - [X] close button
   
 
-## Deploy to Netlify 🚀
+## Deploy to Github Pages 🚀
 Tutorial can be found [here](https://cli.vuejs.org/guide/deployment.html#github-pages)
 
 ## Next Steps 🐾
