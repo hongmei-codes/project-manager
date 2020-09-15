@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import db from "@/firebase"
 
 Vue.use(Vuex);
 
@@ -47,6 +48,7 @@ export const store = new Vuex.Store({
 
   mutations: {
     add: (state, project) => {
+      db.collection('projects').add(project).then(() => console.log('added to firebase'))
       state.projects.unshift(project);
     },
     remove: (state, project) => {
